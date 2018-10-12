@@ -23,4 +23,16 @@ public class NumberMachine {
 		}
 		return result;
 	}
+
+	public String convertNumbers() {
+	    Function<Integer, String> function = i -> Integer.toHexString(i);
+        String result = "";
+        for(Integer number:numbers) {
+            if(!result.equals("")) {
+                result += "-";
+            }
+            result += function.apply(number);
+        }
+        return result;
+    }
 }
